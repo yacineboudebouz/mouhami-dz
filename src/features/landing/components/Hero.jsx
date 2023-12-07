@@ -13,8 +13,8 @@ const Hero = () => {
                 </div>
                 <div className=' flex flex-row justify-evenly items-center'>
                     <ul className=' flex-row  md:flex hidden'>
-                        <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:bg-white-50 transition duration-100 '>Decouvrir dz mouhami </motion.li>
-                        <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:shadow-md transition duration-100 '>Se connecter</motion.li>
+                        <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>Decouvrir dz mouhami </motion.li>
+                        <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>Se connecter</motion.li>
                     </ul>
                     {/* <div className=' h-[30px] w-[30px] bg-red-900 md:hidden '>
 
@@ -22,7 +22,7 @@ const Hero = () => {
 
                 </div>
             </nav>
-            <section className=' flex flex-col px-24'>
+            <section className=' flex flex-col md:px-24 px-12'>
                 <motion.h2 variants={slideIn('left')} className=' text-white md:text-[60px] text-[25px] '>Avocats experts, votre recours parfait</motion.h2>
                 <motion.p variants={littleFadeIn()} className=' md:text-[25px] text-[15px] font-light text-white poppins'>Des avocats dévoués pour protéger vos droits, une défense légale forte à chaque étape</motion.p>
             </section>
