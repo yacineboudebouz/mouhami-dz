@@ -19,7 +19,7 @@ const Services = () => {
                 setSelected(name)
                 setTitle(contentLits[name].title)
                 setDescription(contentLits[name].description)
-            }} className={`${name === selected ? ' bg-primary text-white' : ' bg-white text-black'} shadow-lg py-2 px-3  `}>
+            }} className={`${name === selected ? ' bg-primary text-white' : ' bg-white text-black'} shadow-lg py-2 px-3 w-[150px]  flex justify-center items-center `}>
                 <p className=' font-light text-[20px]'>{name}</p>
             </motion.button>
         )
@@ -32,7 +32,7 @@ const Services = () => {
                 <p className=' font-bold text-primary text-[30px]'>Nos Services</p>
                 <motion.img whileHover={{ scale: 1.1 }} src={hammer} className='h-[35px] w-[35px]' />
             </div>
-            <ul className=' flex flex-row gap-3 py-2 transition duration-200 '>
+            <ul className=' flex flex-row gap-3 py-2 transition flex-wrap justify-center px-10 duration-200 '>
                 {list.map((item, index) => {
                     return (
                         <motion.div variants={fadeIn('left', {}, index * 0.25)}>
@@ -43,8 +43,8 @@ const Services = () => {
             </ul>
             <div className=" sm:flex-row flex flex-col justify-between items-center my-10">
                 <div className=" text-start mx-4 w-2/4 flex flex-col justify-between h-full">
-                    <motion.p variants={textVariant()} className="max-w-2xl my-8 font-bold text-[30px]">{title}</motion.p>
-                    <motion.p variants={littleFadeIn()} className="max-w-2xl my-8 text-[20px] ">{description}</motion.p>
+                    <motion.p variants={textVariant()} className="max-w-2xl my-4 font-bold  text-[20px] md:text-[30px]">{title}</motion.p>
+                    <motion.p variants={littleFadeIn()} className="max-w-2xl mb-2  text-[15px] md:text-[20px]  ">{description}</motion.p>
                 </div>
                 <motion.div variants={littleFadeInX()} className=' relative h-[300px] w-[300px]  bg-cover '>
                     <div className=' absolute top-[30px] right-[30px]  h-[300px] w-[300px] bg-secondBgColor'></div>
