@@ -10,12 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.90.0",
     "@react-three/fiber": "^8.15.12",
     "@reduxjs/toolkit": "^2.0.1",
+    "fortawesome": "^0.0.1-security",
     "framer-motion": "^10.16.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "react-redux": "^9.0.2",
+    "react-router-dom": "^6.20.1",
+    "react-tilt": "^1.0.2",
     "redux-toolkit": "^1.1.2",
     "three": "^0.159.0",
     "three-js": "^79.0.0"

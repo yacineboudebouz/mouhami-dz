@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   index: 0,
+  rate: 0,
 };
 
 export const landingSlice = createSlice({
@@ -11,9 +12,13 @@ export const landingSlice = createSlice({
     changeIndex: (state, action) => {
       state.index = action.payload;
     },
+    changeRate: (state, action) => {
+      state.rate = action.payload;
+    },
   },
 });
 
 export const id = (state) => state.landing.index;
-export const { changeIndex } = landingSlice.actions;
+export const rateIdx = (state) => state.landing.rate;
+export const { changeIndex, changeRate } = landingSlice.actions;
 export default landingSlice.reducer;
