@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../common/Navbar'
 
 const Auth = () => {
     return (
-        <div>Auth</div>
+        <div className=' flex flex-col relative '>
+            <Navbar />
+            <div>Auth</div>
+        </div>
     )
 }
 

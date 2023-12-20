@@ -79,6 +79,8 @@ const Propos = () => {
                 </motion.div>
 
             </div>
+
+
         </main>
     )
 }
