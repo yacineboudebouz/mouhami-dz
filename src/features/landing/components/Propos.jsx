@@ -19,7 +19,7 @@ const Propos = () => {
         return (
             <motion.button whileHover={{ scale: 1.1 }} onClick={() => {
                 dispatch(changeIndex(index))
-            }} className={`${index === sel ? ' bg-primary text-white' : ' bg-white text-black'} shadow-lg py-2 px-3 w-[150px]  flex justify-center items-center `}>
+            }} className={`${index === sel ? ' bg-primary text-white' : ' bg-white text-black'} shadow-lg py-2 px-2 w-[200px] flex justify-center items-center `}>
                 <p className=' font-light text-[20px]'>{contentLits[index].id}</p>
             </motion.button>
         )
@@ -74,7 +74,6 @@ const Propos = () => {
             <div className=" sm:flex-row flex flex-col justify-between items-center my-10">
                 <AnimatedTextCards title={contentLits[sel].title} description={contentLits[sel].description} key={contentLits[sel].title} />
                 <motion.div variants={littleFadeInX()} className=' relative h-[300px] w-[300px]  bg-cover '>
-
                     <img src={services} className=' absolute w-full h-full cover-fill   ' />
                 </motion.div>
 

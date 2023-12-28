@@ -7,16 +7,18 @@ import { useState } from 'react'
 
 import JudgeCanva from './canvas/Judge'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 const Hero = () => {
 
     const [toggle, setToggle] = useState(false)
+    const { t, i18n } = useTranslation();
     return (
         <div className=' bg-hero-pattern bg-cover bg-no-repeat '>
             <main className=' flex flex-col w-full h-screen p-5 justify-between'>
 
                 <section className=' flex flex-col md:px-32 px-12 mt-20'>
-                    <motion.h1 variants={slideIn('left')} className=' text-white md:text-[70px] text-[30px] font-bold '>Avocats experts,<br /> votre recours parfait</motion.h1>
-                    <motion.p variants={littleFadeIn()} className=' md:text-[30px] text-[20px] font-light text-white poppins'>Des avocats dévoués pour protéger vos droits, une défense légale forte à chaque étape</motion.p>
+                    <motion.h1 variants={slideIn('left')} className=' text-white md:text-[70px] text-[30px] font-bold '>{t("header")}</motion.h1>
+                    <motion.p variants={littleFadeIn()} className=' md:text-[30px] text-[20px] font-light text-white poppins'>{t("intro")}</motion.p>
                 </section>
                 <div className=' md:hidden h-[300px]'>
                     <JudgeCanva />

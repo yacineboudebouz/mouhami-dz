@@ -3,7 +3,9 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from './features/landing/Landing'
 import Auth from './features/auth/Auth';
-import Navbar from './features/common/Navbar';
+import Avocat from './features/avocat/avocat';
+import './app/localization/i18n'
+
 const App = () => {
   return (
 
@@ -14,6 +16,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/avocat' element={<Avocat />} />
+        <Route path='*' element={<h1>404</h1>} />
       </Routes>
 
     </BrowserRouter>

@@ -3,10 +3,15 @@ import { saul } from "../assets";
 export const fakeAvocat = {
   name: "Goodman",
   surname: "Saul",
+  email: "saulgoodman@gmail.com",
   rating: 5,
   speciality: "Droit des affaires",
   img: saul,
   wilaya: "Texas",
+  rates: 11,
+  phonenumber: 544255544,
+  website: "https://sualgoodman.com/",
+  bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
 };
 
 export const fakeRates = [

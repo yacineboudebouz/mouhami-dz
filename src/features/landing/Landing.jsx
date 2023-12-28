@@ -2,8 +2,8 @@ import React from 'react'
 import Hero from './components/Hero'
 import Propos from './components/Propos'
 import Avocats from './components/Avocats'
-import Footer from './components/Footer'
-import Navbar from '../common/Navbar'
+import Footer from '../../common/Footer'
+import Navbar from '../../common/Navbar'
 
 
 const Landing = () => {

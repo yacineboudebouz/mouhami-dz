@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import { logo, facebook, telegram, linkedin } from '../../../assets'
+import { logo, facebook, telegram, linkedin } from './../assets/index'
 const Footer = () => {
     return (
         <footer className=' bg-avocats-pattern bg-cover bg-no-repeat w-full h-full'>

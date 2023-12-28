@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../common/Navbar'
+import Navbar from './../../common/Navbar'
 
 const Auth = () => {
     return (
