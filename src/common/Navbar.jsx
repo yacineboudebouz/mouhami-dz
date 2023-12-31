@@ -17,10 +17,10 @@ const Navbar = () => {
     };
     return (
         <nav className=' flex flex-row justify-between  top-0 left-0 p-5 bg-navbar w-full '>
-            <div className=' flex flex-row items-center'>
+            <Link className=' flex flex-row items-center' to="/">
                 <motion.img drag whileDrag={{ rotate: [0, 45, 0, -45, 0], transition: { duration: 1.5, repeat: Infinity, repeatType: 'loop' } }} whileHover={{ scale: 1.1 }} src={logo} className='h-[35px] w-[35px]' />
                 <p className=' flex items-center  font-bold text-[20px] px-3 text-white'><span className=' text-primary font-bold text-[20px] px-3 '>DZ</span>Mouhami</p>
-            </div>
+            </Link>
             <div className=' flex flex-row justify-evenly items-center'>
                 <ul className=' flex-row  md:flex hidden'>
                     <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("discover")}</motion.li>
@@ -44,18 +44,18 @@ const Navbar = () => {
                             <div className="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
 
                                 <div className="py-1">
-                                    <a onClick={() => { setLang('FR'); i18n.changeLanguage('FR'); toggleDropdown() }}
+                                    <button onClick={() => { setLang('FR'); i18n.changeLanguage('FR'); toggleDropdown() }}
 
                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     >
                                         FR
-                                    </a>
-                                    <a onClick={() => { setLang('EN'); i18n.changeLanguage('EN'); toggleDropdown() }}
+                                    </button>
+                                    <button onClick={() => { setLang('EN'); i18n.changeLanguage('EN'); toggleDropdown() }}
 
                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     >
                                         EN
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         )}

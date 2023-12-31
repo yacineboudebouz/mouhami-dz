@@ -5,7 +5,7 @@ import AvocatProfile from './components/AvocatProfile'
 
 function Avocat() {
     return (
-        <div className=' flex flex-col relative '>
+        <div className='  relative w-full  '>
             <Navbar />
             <AvocatProfile />
             <Footer />

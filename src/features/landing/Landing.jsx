@@ -10,7 +10,7 @@ const Landing = () => {
 
 
     return (
-        <div className=' relative   w-full'>
+        <div className=' relative w-full'>
             <div className=' fixed w-full z-50'>
                 <Navbar />
             </div>
