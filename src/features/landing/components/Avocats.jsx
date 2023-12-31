@@ -10,7 +10,8 @@ import { FaStar, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { changeRate, rateIdx } from '../landingSlice'
 import { useDispatch, useSelector } from 'react-redux'
-
+import blogData from "../../../constants/blogData"
+import { NavLink } from 'react-router-dom/dist'
 
 
 
@@ -129,6 +130,7 @@ const Avocats = () => {
                 </motion.div>
 
             </section>
+            {/*this one is supposed to be a multiple blogs but*/}
             <section id='blogs' className='  flex flex-col justify-center items-center mt-5' >
                 <div className=' flex flex-row gap-1 items-center'>
                     <motion.h1 variants={slideIn('left')} whileInView='show' inherit={false} className=' font-bold text-primary md:text-[30px] text-[20px] my-4'>Chroniques Juridiques</motion.h1>
@@ -139,9 +141,12 @@ const Avocats = () => {
                         <img src={blog} className=' absolute w-full h-full cover-fill   border-firstBgColor border-4' />
                     </motion.div>
                     <div className=" text-start mx-4 w-2/4 flex flex-col justify-between h-full">
-                        <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">Blog title</motion.p>
+                        <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">{blogData[0].blogTitle}</motion.p>
                         <motion.p variants={slideIn('left')} className="max-w-2xl my-8 text-[15px] md:text-[20px] w-full ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ..</motion.p>
-                        <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300 max-w-xs'>Voir plus</motion.button>
+                        <NavLink to={`blog/${blogData[0].blogID}`}>
+                            <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300 max-w-xs'>Voir plus</motion.button>
+                        </NavLink>
+                        
                     </div>
                 </div>
             </section>

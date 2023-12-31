@@ -22,8 +22,11 @@ const Navbar = () => {
                 <p className=' flex items-center  font-bold text-[20px] px-3 text-white'><span className=' text-primary font-bold text-[20px] px-3 '>DZ</span>Mouhami</p>
             </Link>
             <div className=' flex flex-row justify-evenly items-center'>
-                <ul className=' flex-row  md:flex hidden'>
-                    <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("discover")}</motion.li>
+                <ul className=' flex-row md:flex hidden'>
+                    <NavLink to='/faq' exact activeClassName="text-primary">
+                        <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("discover")}</motion.li>
+                    </NavLink>
+                   
                     <NavLink to='/auth' exact activeClassName=" text-primary">
                         <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("login")}</motion.li>
                     </NavLink>
