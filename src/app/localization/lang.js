@@ -6,6 +6,7 @@ export const lang = {
       intro:
         "Dedicated lawyers to protect your rights, strong legal defense every step of the way",
       discover: "Discover dz mouhami",
+      language: "EN",
     },
   },
   FR: {
@@ -15,6 +16,7 @@ export const lang = {
       intro:
         "Des avocats dévoués pour protéger vos droits, une défense légale forte à chaque étape",
       discover: "Decouvrir dz mouhami",
+      language: "FR",
     },
   },
 };

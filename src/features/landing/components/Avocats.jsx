@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { hammer, algeria, blog } from '../../../assets'
 import { animate, motion } from 'framer-motion'
 import { textVariant, fadeIn, slideIn, littleFadeIn } from '../../../utils/motion'
@@ -12,14 +12,19 @@ import { changeRate, rateIdx } from '../landingSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import blogData from "../../../constants/blogData"
 import { NavLink } from 'react-router-dom/dist'
+import useFetch from '../../../common/useFetch'
+import { Audio } from 'react-loader-spinner'
 
 
 
 
 const Avocats = () => {
+
+    // const { data, isPending, error } = useFetch('http://localhost:3000/fakeAvocats')
     const list = fakeRates
     const dispatch = useDispatch()
     const idx = useSelector(rateIdx)
+
 
 
     const handleNext = () => {
@@ -92,7 +97,7 @@ const Avocats = () => {
                     <motion.h1 variants={textVariant()} className=' font-bold text-primary text-[30px] my-4'>Nos Avocats Émérites</motion.h1>
                     <motion.img src={hammer} />
                 </div>
-                <div className=' flex flex-row gap-5 items-center justify-center top flex-wrap'>
+                {<div className=' flex flex-row gap-5 items-center justify-center top flex-wrap'>
                     {avocats.map((avocat, i) => {
                         return (
                             <motion.div variants={fadeIn('left', {}, i * 0.25)} className=' flex' >
@@ -100,7 +105,17 @@ const Avocats = () => {
                             </motion.div>
                         )
                     })}
-                </div>
+                </div>}
+                {/* { <Audio
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="#C89D66"
+                    ariaLabel="loading"
+                    wrapperStyle
+                    wrapperClass
+                />}
+                {<div className=' flex flex-row gap-5 items-center justify-center top flex-wrap'>{error}</div>} */}
                 <div></div>
 
             </section>
@@ -146,7 +161,7 @@ const Avocats = () => {
                         <NavLink to={`blog/${blogData[0].blogID}`}>
                             <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300 max-w-xs'>Voir plus</motion.button>
                         </NavLink>
-                        
+
                     </div>
                 </div>
             </section>

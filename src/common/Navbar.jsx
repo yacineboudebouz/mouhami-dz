@@ -26,7 +26,7 @@ const Navbar = () => {
                     <NavLink to='/faq' exact activeClassName="text-primary">
                         <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("discover")}</motion.li>
                     </NavLink>
-                   
+
                     <NavLink to='/auth' exact activeClassName=" text-primary">
                         <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("login")}</motion.li>
                     </NavLink>
@@ -38,7 +38,7 @@ const Navbar = () => {
                             aria-haspopup="true"
                             onClick={toggleDropdown}
                         >
-                            <div>{lang}</div>
+                            <div>{t("language")}</div>
                             <ArrowDropDownOutlinedIcon className='text-white' />
 
                         </button>
@@ -48,13 +48,11 @@ const Navbar = () => {
 
                                 <div className="py-1">
                                     <button onClick={() => { setLang('FR'); i18n.changeLanguage('FR'); toggleDropdown() }}
-
                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     >
                                         FR
                                     </button>
                                     <button onClick={() => { setLang('EN'); i18n.changeLanguage('EN'); toggleDropdown() }}
-
                                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     >
                                         EN
@@ -75,7 +73,39 @@ const Navbar = () => {
                         <ul className='list-none flex justify-end items-start flex-col gap-4'>
                             <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>Decouvrir dz mouhami </motion.li>
                             <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>Se connecter</motion.li>
+                            <li className="relative inline-block text-left">
+                                <button
+                                    type="button"
+                                    className="inline-flex justify-center w-full px-4  text-sm font-medium text-white  border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 active:bg-gray-800"
+                                    id="options-menu"
+                                    aria-haspopup="true"
+                                    onClick={toggleDropdown}
+                                >
+                                    <div>{lang}</div>
+                                    <ArrowDropDownOutlinedIcon className='text-white' />
 
+                                </button>
+
+                                {isOpen && (
+                                    <div className="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
+
+                                        <div className="py-1">
+                                            <button onClick={() => { setLang('FR'); i18n.changeLanguage('FR'); toggleDropdown() }}
+
+                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            >
+                                                FR
+                                            </button>
+                                            <button onClick={() => { setLang('EN'); i18n.changeLanguage('EN'); toggleDropdown() }}
+
+                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            >
+                                                EN
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </li>
                         </ul>
                     </div>
                 </div>

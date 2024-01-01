@@ -1,0 +1,44 @@
+{
+    "fakeAvocats":[
+        {
+            "name": "Goodman",
+            "surname": "Saul",
+            "email": "saulgoodman@gmail.com",
+            "rating": 5,
+            "speciality": "Droit des affaires",
+            "img": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+            "wilaya": "Texas",
+            "rates": 11,
+            "phonenumber": 544255544,
+            "website": "https://sualgoodman.com/",
+            "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+          },
+          {
+            "name": "Goodman",
+            "surname": "Saul",
+            "email": "saulgoodman@gmail.com",
+            "rating": 5,
+            "speciality": "Droit des affaires",
+            "img": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+            "wilaya": "Texas",
+            "rates": 11,
+            "phonenumber": 544255544,
+            "website": "https://sualgoodman.com/",
+            "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+          },{
+            "name": "Goodman",
+            "surname": "Saul",
+            "email": "saulgoodman@gmail.com",
+            "rating": 5,
+            "speciality": "Droit des affaires",
+            "img": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D",
+            "wilaya": "Texas",
+            "rates": 11,
+            "phonenumber": 544255544,
+            "website": "https://sualgoodman.com/",
+            "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+          }
+    ]
+
+    
+}
