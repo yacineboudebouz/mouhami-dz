@@ -8,6 +8,21 @@ function RateFrom() {
     const { t, i18n } = useTranslation();
     const position = [51.505, -0.09]
     const [rating, setRating] = useState(0)
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [comment, setComment] = useState("")
+    const handleSubmit = (e) => {
+
+    }
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const handleNameChange = (e) => {
+        setName(e.target.value)
+    }
+    const handleCommentChange = (e) => {
+        setComment(e.target.value)
+    }
     return (
         <div className=' flex flex-col p-5 '>
             <p className=' text-[30px] font-medium'>{t("sharerating")}</p>
@@ -26,15 +41,15 @@ function RateFrom() {
                 </div>
                 <div>
                     <p>{t("clientname")}</p>
-                    <input type='text' className=' border-b-2 w-full outline-none py-5' placeholder={t("fullname")} />
+                    <input type='text' className=' border-b-2 w-full outline-none py-5' placeholder={t("fullname")} onChange={(e) => handleNameChange(e)} value={name} />
                 </div>
                 <div>
                     <p>{"Email"}</p>
-                    <input type='email' className=' border-b-2 w-full outline-none py-5' placeholder={t("Email")} />
+                    <input type='email' className=' border-b-2 w-full outline-none py-5' placeholder={t("Email")} onChange={(e) => handleEmailChange(e)} value={email} />
                 </div>
                 <div>
                     <p>{t("comment")}</p>
-                    <textarea type='text' className=' border-b-2 w-full outline-none py-10' maxLength={200} />
+                    <textarea type='text' className=' border-b-2 w-full outline-none py-10' maxLength={200} onChange={(e) => handleCommentChange(e)} value={comment} />
                 </div>
                 <button type='submit' className=' bg-primary text-white py-2 rounded-sm w-[20vh]'>{t("rate")}</button>
             </form>
