@@ -14,6 +14,7 @@ import blogData from "../../../constants/blogData"
 import { NavLink } from 'react-router-dom/dist'
 import useFetch from '../../../common/useFetch'
 import { Audio } from 'react-loader-spinner'
+import { StarRating } from '../../../common/widgets/StarRating'
 
 
 
@@ -44,20 +45,20 @@ const Avocats = () => {
         }
     }
     let avocats = [fakeAvocat, fakeAvocat, fakeAvocat]
-    const StarRating = ({ rating }) => {
-        return (
-            <div className=' flex flex-row'>
-                {[...Array(5)].map((star, i) => {
-                    const ratingValue = i + 1;
-                    return (
-                        <label key={i} >
-                            <FaStar color={ratingValue <= rating ? "#C89D66" : "#333642"} />
-                        </label>
-                    );
-                })}
-            </div>
-        );
-    };
+    // const StarRating = ({ rating }) => {
+    //     return (
+    //         <div className=' flex flex-row'>
+    //             {[...Array(5)].map((star, i) => {
+    //                 const ratingValue = i + 1;
+    //                 return (
+    //                     <label key={i} >
+    //                         <FaStar color={ratingValue <= rating ? "#C89D66" : "#333642"} />
+    //                     </label>
+    //                 );
+    //             })}
+    //         </div>
+    //     );
+    // };
 
     const AvocatCard = ({ fakeAvocat, index }) => {
 
