@@ -15,6 +15,7 @@ export const lang = {
       fullname: "Full name",
       comment: "Comment",
       send: "Send",
+      hire: "Make an appointment",
     },
   },
   FR: {
@@ -33,6 +34,7 @@ export const lang = {
       fullname: "Nom complet",
       comment: "Commentaire",
       send: "Envoyer",
+      hire: "Prendre un Rendez-vous",
     },
   },
 };

@@ -16,7 +16,7 @@ function AvocatProfile() {
     const position = [51.505, -0.09]
     return (
         <div className=' flex md:flex-row md:justify-between   p-5 justify-center flex-col items-center md:items-start'>
-            <div className=' flex flex-col md:w-[400px] w-full md:flex-wrap items-center md:items-start z-50'>
+            <div className=' flex flex-col md:w-[400px] w-full md:flex-wrap items-center md:items-start '>
                 <img src={fakeAvocat.img} className=' w-[250px] h-[250px]' />
                 <div className=' flex flex-wrap mt-6 flex-row text-[25px] gap-2'>
                     <p>{fakeAvocat.name}</p>
@@ -45,7 +45,7 @@ function AvocatProfile() {
                 </div>
                 <p>{fakeAvocat.bio}</p>
             </div>
-            <img src={semilogo} className='absolute top-64 left-0 z-0' />
+            {/* <img src={semilogo} className='absolute top-64 left-0 z-50' /> */}
         </div>
     )
 }

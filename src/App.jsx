@@ -8,6 +8,7 @@ import './app/localization/i18n'
 import Faq from './features/faq/faq';
 import Blog from './features/blog/Blog';
 
+
 const App = () => {
   return (
 
@@ -22,9 +23,11 @@ const App = () => {
         <Route path='/faq' element={<Faq></Faq>} />
         <Route path='/blog/:id' element={<Blog></Blog>} />
         <Route path='*' element={<h1>404</h1>} />
+
       </Routes>
 
     </BrowserRouter>
+
 
 
   )

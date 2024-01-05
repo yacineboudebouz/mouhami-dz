@@ -11,9 +11,7 @@ function RateFrom() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [comment, setComment] = useState("")
-    const handleSubmit = (e) => {
-
-    }
+    const handleSubmit = (e) => { }
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
     }
@@ -26,7 +24,7 @@ function RateFrom() {
     return (
         <div className=' flex flex-col p-5 '>
             <p className=' text-[30px] font-medium'>{t("sharerating")}</p>
-            <form className=' flex flex-col rounded-xl shadow-lg p-10 gap-10 md:w-[90vh]'>
+            <div className=' flex flex-col rounded-xl shadow-lg p-10 gap-10 md:w-[90vh]'>
                 <div>
                     <p>{t("rate")}</p>
                     <StarRatings
@@ -51,8 +49,8 @@ function RateFrom() {
                     <p>{t("comment")}</p>
                     <textarea type='text' className=' border-b-2 w-full outline-none py-10' maxLength={200} onChange={(e) => handleCommentChange(e)} value={comment} />
                 </div>
-                <button type='submit' className=' bg-primary text-white py-2 rounded-sm w-[20vh]'>{t("rate")}</button>
-            </form>
+                <button type='submit' className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("send")}</button>
+            </div>
         </div>
     )
 }
