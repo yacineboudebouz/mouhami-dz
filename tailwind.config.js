@@ -13,6 +13,7 @@ export default {
         "hero-pattern": "url('/src/assets/landing/landing-hero.png')",
         "avocats-pattern": "url('/src/assets/landing/avocat-bg.png')",
       },
+
     },
   },
   plugins: [],

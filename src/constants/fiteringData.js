@@ -1,0 +1,47 @@
+import { saul } from "../assets";
+
+export const fakeAvocats = [{
+    name: "Goodman",
+    surname: "Saul",
+    email: "saulgoodman@gmail.com",
+    rating: 5,
+    speciality: "Droit des affaires",
+    img: saul,
+    wilaya: "Texas",
+    rates: 11,
+    phonenumber: 544255544,
+    website: "https://sualgoodman.com/",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+  } , {
+    name: "Goodman",
+    surname: "Saul",
+    email: "saulgoodman@gmail.com",
+    rating: 5,
+    speciality: "Droit des affaires",
+    img: saul,
+    wilaya: "Texas",
+    rates: 11,
+    phonenumber: 544255544,
+    website: "https://sualgoodman.com/",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+  },{
+    name: "Goodman",
+    surname: "Saul",
+    email: "saulgoodman@gmail.com",
+    rating: 5,
+    speciality: "Droit des affaires",
+    img: saul,
+    wilaya: "Texas",
+    rates: 11,
+    phonenumber: 544255544,
+    website: "https://sualgoodman.com/",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+}];
+export const problemJuridiqueData = [
+    {problemID : 1 , problemValue : "conflits familiaux"},
+    {problemID : 2 , problemValue : "constitutionnel"},
+    {problemID : 3 , problemValue : "Travail"},
+    {problemID : 4 , problemValue : "administratif"},
+    {problemID : 5 , problemValue : "conflits familiaux"},
+    {problemID : 6 , problemValue : "conflits familiaux"},
+]
