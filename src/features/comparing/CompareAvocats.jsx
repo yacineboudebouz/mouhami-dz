@@ -3,8 +3,8 @@ import { fakeAvocats } from '../../constants/fiteringData'
 import Navbar from '../../common/Navbar'
 import Footer from '../../common/Footer'
 import { useState } from 'react'
-const CompareAvocats = ({selectedAvocat}) => {
-  const [avocatData , setAvocatData] = useState(fakeAvocats)
+const CompareAvocats = ({setData}) => {
+  const [avocatData , setAvocatData] = useState(setData)
   return (
     <div className='flex flex-col gap-32'>
         <Navbar></Navbar>
