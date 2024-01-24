@@ -117,3 +117,11 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
+export const modal = {
+  hidden: { x: "-100vh", opacity: 0 },
+  visible: {
+    y: "200px",
+    opacity: 1,
+    transition: { delay: 0.5 },
+  },
+};

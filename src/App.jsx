@@ -12,6 +12,7 @@ import FindAvocat from './features/filter/FindAvocat';
 import CompareAvocats from './features/comparing/CompareAvocats';
 
 
+
 const App = () => {
 
   const [sharedData, setSharedData] = useState('');
@@ -31,9 +32,11 @@ const App = () => {
         <Route path='/find-avocat' element={<FindAvocat getData={(data) => setSharedData(data)}></FindAvocat>} />
         <Route path='/compare-avocat' element={<CompareAvocats setData={sharedData}></CompareAvocats>} />
         <Route path='*' element={<h1>404</h1>} />
+
       </Routes>
 
     </BrowserRouter>
+
 
 
   )
