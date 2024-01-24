@@ -1,6 +1,7 @@
 import { saul } from "../assets";
 
 export const fakeAvocats = [{
+    avocatID : 1 ,
     name: "Goodman",
     surname: "Saul",
     email: "saulgoodman@gmail.com",
@@ -13,6 +14,7 @@ export const fakeAvocats = [{
     website: "https://sualgoodman.com/",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   } , {
+    avocatID : 2 ,
     name: "Goodman",
     surname: "Saul",
     email: "saulgoodman@gmail.com",
@@ -25,6 +27,7 @@ export const fakeAvocats = [{
     website: "https://sualgoodman.com/",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
   },{
+    avocatID : 3 ,
     name: "Goodman",
     surname: "Saul",
     email: "saulgoodman@gmail.com",

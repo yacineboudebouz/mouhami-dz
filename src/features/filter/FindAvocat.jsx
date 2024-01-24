@@ -6,12 +6,16 @@ import { littleFadeIn, littleFadeInX, slideIn, textVariant } from "../../utils/m
 import { fakeAvocats } from '../../constants/fiteringData'
 import { problemJuridiqueData } from '../../constants/fiteringData'
 import MoreIcon from '@mui/icons-material/ExpandMoreRounded';
+import EmailIcon from '@mui/icons-material/EmailRounded';
+import WebsiteIcon from '@mui/icons-material/LanguageRounded';
+import PhoneIcon from '@mui/icons-material/LocalPhoneRounded';
 import { StarRating } from '../../common/widgets/StarRating'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import theme from './styles/Theme'
 
-import { useParams } from 'react-router-dom/dist'
+import { Link, useParams } from 'react-router-dom/dist'
+import { Compare } from '@mui/icons-material'
 
 const FindAvocat = ({/*we need filtering parameters from landing page to fetch avocats in here*/}) => {
 
@@ -47,6 +51,22 @@ const FindAvocat = ({/*we need filtering parameters from landing page to fetch a
         setVisibleJuridiquePrblms(visibleJuridiquePrblms + juridiquePrblms.length - 4);
     };
 
+    const [compare , setCompare] = useState(false)
+    const [selectedAvocats, setSelectedAvocats] = useState([]);
+    const [compareOverlay, setCompareOverlay] = useState(null);
+
+    const handleCompare = (avocatID) => {
+        setCompare(!compare)
+        setSelectedAvocats((prevSelectedAvocats) => {
+            if (prevSelectedAvocats.includes(avocatID)) {
+              return prevSelectedAvocats.filter((id) => id !== avocatID);
+            } else {
+              return [...prevSelectedAvocats, avocatID];
+            }
+        });
+
+    };
+    console.log(selectedAvocats)
     useEffect(()=>{
         fetchAvocats()
         fetchProblemData()
@@ -57,27 +77,21 @@ const FindAvocat = ({/*we need filtering parameters from landing page to fetch a
     const fetchProblemData = ()=>{
 
     }
-    const handleProblemChange = (e) => {
-        setProblem(e.target.value)
-    }
-    const handleLocationChange = (e) => {
-        setLocation(e.target.value)
-    }
-    
+
     const  valuetext = (value) =>{
         return `${value}m`;
     }
     return (
         <div className=' flex flex-col relative '>
             <Navbar />
-            <div className='flex flex-col gap-12'>
-                <p>Trouver votre avocat</p>
+            <div className='flex flex-col gap-12 py-10'>
+                <p className='flex items-center text-secondary text-3xl justify-center'>Trouver votre avocat</p>
                 <div className=' flex md:flex-row flex-col justify-center w-full px-24 gap-2'>
                     <motion.input variants={littleFadeInX()} onChange={(e) => setProblem(e.target.value)} type='text' placeholder='Problème juridique' className=' outline-2 p-3 shadow-lg outline-primary' value={problem} />
                     <motion.input variants={textVariant()} onChange={(e) => setLocation(e.target.value)} type='text' placeholder='Wilaya, code postal  . . .' className=' outline-2 p-3 shadow-lg outline-primary' value={location} />
                     <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Trouver Un Avocat</motion.button>
                 </div>
-                <div>
+                <div className='flex flex-row gap-[8em]'>
                     <div className='flex flex-col gap-4 bg-secondary items-start w-fit p-6 rounded-lg '>
                         <div className='flex flex-col gap-3 '>
                             <h3 class="mb-4 font-normal text-base text-white ">Probleme juridique</h3>
@@ -149,7 +163,63 @@ const FindAvocat = ({/*we need filtering parameters from landing page to fetch a
                             </select>
                         </div>
                     </div>
-                    <div></div>
+                    <div className='flex flex-col gap-8'>
+                        {avocatsData.map((avocat , index)=>(
+                            <div className='flex flex-row gap-6 shadow-md rounded-md p-6'>
+                                <div className='flex flex-col gap-4'>
+                                    <div className='flex flex-row gap-4'>
+                                        <img className='rounded-full w-[60px] h-[60px]' src={avocat.img} alt='avocat-img'></img>
+                                        <span className='flex flex-col gap-2 items-start'>
+                                            <p className='text-secondary text-base'>{avocat.surname + " , " + avocat.wilaya}</p>
+                                            <p className='text-primary text-sm'>{avocat.speciality}</p>
+                                            <span className='flex flex-row items-center gap-4'>
+                                                <StarRating rating={avocat.rating}></StarRating>
+                                                <p className='text-xs'>{avocat.rates} Avis </p>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <p className='w-[300px] text-secondary text-sm'>{avocat.bio}</p>
+                                </div>
+                                <div className='flex flex-col gap-3 '>
+                                    <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>
+                                        <Link to={`/avocat/${avocat.avocatID}`}> Visiter son profile</Link>
+                                    </motion.button>
+                                    <span className='flex flex-row gap-4'>
+                                        <PhoneIcon className='text-primary w-[25px] h-[25px]'></PhoneIcon>
+                                        <p>{avocat.phonenumber}</p>
+                                    </span>
+                                    <span className='flex flex-row gap-4'>
+                                        <EmailIcon className='text-primary w-[25px] h-[25px]'></EmailIcon>
+                                        <p>{avocat.email}</p>
+                                    </span>
+                                    <span className='flex flex-row gap-4'>
+                                        <WebsiteIcon className='text-primary w-[25px] h-[25px]'></WebsiteIcon>
+                                        <p>{avocat.website}</p>
+                                    </span>
+                                    <span className='flex flex-row gap-4'>
+                                        <input type='checkbox' 
+                                            value={Compare}
+                                            onChange={() => handleCompare(avocat.avocatID)}
+                                        ></input>
+                                        <label>Comparer</label>
+                                    </span>
+
+                                </div>
+                                
+                                <div className='bg-secondaryBlur flex items-center justify-center' onClick={()=>{handleCompare(avocat.avocatID)}}>
+                                <motion.button
+                                    variants={littleFadeIn()}
+                                    className='bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'
+                                >
+                                    <Link to={`/compare-avocat`}>
+                                        <p>Comparer</p>                                        
+                                    </Link>
+                                </motion.button>
+                                </div>
+                                
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 
             </div>
