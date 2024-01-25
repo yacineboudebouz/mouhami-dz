@@ -6,7 +6,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 
 const Judge = () => {
 
-  const judge = useGLTF('./../../../../../public/judge/scene.gltf')
+  const judge = useGLTF('./../../../../../judge/scene.gltf')
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />

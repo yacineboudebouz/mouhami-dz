@@ -20,7 +20,7 @@ const Hero = () => {
                     <motion.p variants={littleFadeIn()} className=' md:text-[30px] text-[20px] font-light text-white poppins'>{t("intro")}</motion.p>
                 </section>
                 <div className=' md:hidden h-[300px]'>
-                    <JudgeCanva />
+                    {/*<JudgeCanva />*/}
                 </div>
                 <a href='#propos'>
                     <div className=' flex justify-center w-full' >
