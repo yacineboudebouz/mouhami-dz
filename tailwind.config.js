@@ -13,6 +13,7 @@ export default {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/landing/landing-hero.png')",
         "avocats-pattern": "url('/src/assets/landing/avocat-bg.png')",
+        "logo-pattern": "url('/src/assets/landing/semilogo.png')",
       },
 
     },

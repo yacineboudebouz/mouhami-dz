@@ -1,6 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { littleFadeIn, littleFadeInX, slideIn, textVariant } from "../../utils/motion"
 import Box from '@mui/material/Box';
@@ -110,8 +111,9 @@ const SignUpAvocat = () => {
         <div className='flex flex-col items-center justify-center gap-6 mt-32'>
             <p className='text-[3em] font-medium text-white'>De retour !</p>
             <p className='text-sm text-white '>Connectez-vous pour accéder à votre compte</p>
-            <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Se connecter</motion.button>
-        </div>
+            <NavLink to='/login-avocat'>
+              <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Se connecter</motion.button>
+            </NavLink></div>
         <img src={logo} className='h-8 w-32'></img>  
        </div>
        <div className='flex flex-col items-center text-secondary p-8 gap-8'>

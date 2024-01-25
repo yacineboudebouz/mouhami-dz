@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import logo from "../../assets/signUp/logoName.png"
 import success from  "../../assets/signUp/success.png"
+import { NavLink } from 'react-router-dom';
 
 const SignUpAdmin = () => {
   const steps = ['', ''];
@@ -69,16 +70,6 @@ const SignUpAdmin = () => {
   };
 
   
-  const handleFile = (event) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-        const reader = new FileReader();
-        reader.readAsDataURL(selectedFile);
-    }
-
-    setFile(selectedFile);
-  };
-
   const handleSubmit = ()=>{
     const formData = new FormData();
     formData.append('Non', nom);
@@ -103,7 +94,10 @@ const SignUpAdmin = () => {
         <div className='flex flex-col items-center justify-center gap-6 mt-32'>
             <p className='text-[3em] font-medium text-white'>De retour !</p>
             <p className='text-sm text-white '>Connectez-vous pour accéder à votre compte</p>
-            <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Se connecter</motion.button>
+            <NavLink to='/login-admin'>
+              <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Se connecter</motion.button>
+            </NavLink>
+            
         </div>
         <img src={logo} className='h-8 w-32'></img>  
        </div>
