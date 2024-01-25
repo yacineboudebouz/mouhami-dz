@@ -9,8 +9,9 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LanguageIcon from '@mui/icons-material/Language';
 import { primaryColor } from '../../../utils/colors'
 import { semilogo } from '../../../assets'
+
 // import GoogleMapReact from 'google-map-react'
-// import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Marker, Popup, } from 'react-leaflet'
 function AvocatProfile() {
     const { t, i18n } = useTranslation();
     const position = [51.505, -0.09]
@@ -26,7 +27,7 @@ function AvocatProfile() {
                 <p className=' font-semibold text-primary text-[25px]'>{t("right")}</p>
                 <div className=' flex flex-row  items-center  gap-4'>
                     <StarRating rating={fakeAvocat.rating} />
-                    <p className=' '>{fakeAvocat.rates + t("  rates")}</p>
+                    <p className=' '>{fakeAvocat.rates + t("rates")}</p>
                 </div>
                 <div className=' my-5 mx-1 md:text-[20px]'>
                     <div className='flex flex-row gap-2 items-center'>
@@ -46,6 +47,19 @@ function AvocatProfile() {
                 <p>{fakeAvocat.bio}</p>
             </div>
             {/* <img src={semilogo} className='absolute top-64 left-0 z-50' /> */}
+
+            <MapContainer center={fakeAvocat.position} zoom={13} scrollWheelZoom={false} style={{ height: "500px", width: "300px" }}>
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={fakeAvocat.position}>
+                    <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                </Marker>
+            </MapContainer>
+
         </div>
     )
 }
