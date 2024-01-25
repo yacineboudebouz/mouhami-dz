@@ -19,6 +19,9 @@ export const lang = {
       choose_time: "Pick the consultation time",
       back: "Back",
       next: "Next",
+      phone: "Phone number",
+      appoinement: "Confirm Appointment",
+      confirm: "Confirm",
     },
   },
   FR: {
@@ -41,6 +44,9 @@ export const lang = {
       choose_time: "Choisir le temps de consulation",
       back: "Precedent",
       next: "Suivant",
+      phone: "Numéro de téléphone",
+      appoinement: "Confirmez le rendez vous",
+      confirm: "Confirmer",
     },
   },
 };
