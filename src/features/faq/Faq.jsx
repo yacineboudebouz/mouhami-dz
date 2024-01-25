@@ -24,7 +24,7 @@ const Faq = () => {
                             <div key={index} className='shadow-md flex flex-col gap-6 bg-white p-6 w-[65vw] '>
                                 <div className='flex flex-row items-center justify-between gap-12'>
                                     <span className='flex justify-end'>{faq.faqQuestion}</span>
-                                    {faqStates[index] ? <ExpandLessIcon className='h-6 w-6 cursor-pointer' onClick={() => toggleFaq(index)} /> : <ExpandMoreIcon className='h-6 w-6 cursor-pointer' onClick={() => toggleFaq(index)}/>}
+                                    {faqStates[index] ? <ExpandMoreIcon className='h-6 w-6 cursor-pointer' onClick={() => toggleFaq(index)} /> : <ExpandLessIcon className='h-6 w-6 cursor-pointer' onClick={() => toggleFaq(index)}/>}
                                 </div>
                                 {!faqStates[index] && <p className='text-zinc-500 w-9/12 md:w-[500px]'>{faq.faqReponse}</p>}
                             </div>
