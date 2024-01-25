@@ -16,6 +16,9 @@ export const lang = {
       comment: "Comment",
       send: "Send",
       hire: "Make an appointment",
+      choose_time: "Pick the consultation time",
+      back: "Back",
+      next: "Next",
     },
   },
   FR: {
@@ -35,6 +38,9 @@ export const lang = {
       comment: "Commentaire",
       send: "Envoyer",
       hire: "Prendre un Rendez-vous",
+      choose_time: "Choisir le temps de consulation",
+      back: "Precedent",
+      next: "Suivant",
     },
   },
 };

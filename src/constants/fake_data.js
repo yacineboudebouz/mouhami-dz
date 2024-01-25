@@ -12,6 +12,7 @@ export const fakeAvocat = {
   phonenumber: 544255544,
   website: "https://sualgoodman.com/",
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+  position: [51.505, -0.09],
 };
 
 export const fakeRates = [

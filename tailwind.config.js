@@ -8,14 +8,12 @@ export default {
         primary: "#C89D66",
         secondary: "#333642",
         navbar: "#162542",
-        secondaryBlur : "#16254299"
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/landing/landing-hero.png')",
         "avocats-pattern": "url('/src/assets/landing/avocat-bg.png')",
         "logo-pattern": "url('/src/assets/landing/semilogo.png')",
       },
-
     },
   },
   plugins: [],
