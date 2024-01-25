@@ -27,7 +27,7 @@ const Navbar = () => {
                         <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("discover")}</motion.li>
                     </NavLink>
 
-                    <NavLink to='/auth' exact activeClassName=" text-primary">
+                    <NavLink to='/sign-up-avocat' exact activeClassName=" text-primary">
                         <motion.li whileHover={{ scale: 1.1, transition: { ease: "easeOut" } }} className=' text-white font-light mx-5 cursor-pointer hover:text-primary transition duration-500 '>{t("login")}</motion.li>
                     </NavLink>
                     <li className="relative inline-block text-left">

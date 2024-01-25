@@ -10,6 +10,8 @@ import Faq from './features/faq/faq';
 import Blog from './features/blog/Blog';
 import FindAvocat from './features/filter/FindAvocat';
 import CompareAvocats from './features/comparing/CompareAvocats';
+import SignUpAvocat from './features/Authentification/SignUpAvocat';
+import SignUpAdmin from './features/Authentification/SignUpAdmin';
 
 
 
@@ -31,6 +33,8 @@ const App = () => {
         <Route path='/avocat/:id' element={<Avocat />} />
         <Route path='/find-avocat' element={<FindAvocat getData={(data) => setSharedData(data)}></FindAvocat>} />
         <Route path='/compare-avocat' element={<CompareAvocats setData={sharedData}></CompareAvocats>} />
+        <Route path='/sign-up-avocat' element={<SignUpAvocat></SignUpAvocat>} />
+        <Route path='/sign-up-admin' element={<SignUpAdmin></SignUpAdmin>} />
         <Route path='*' element={<h1>404</h1>} />
 
       </Routes>
