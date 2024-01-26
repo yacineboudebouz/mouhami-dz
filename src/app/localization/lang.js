@@ -35,6 +35,10 @@ export const lang = {
       blogsubtitle: "Blog Sub Title",
       blogcontent: "Blog Content",
       myblogs: "My Blogs",
+      manageavocats: "Manage Avocats",
+      gessite: "Website gestion",
+      commenthis: "Cemments history",
+      nocom: "No comments",
     },
   },
   FR: {
@@ -73,6 +77,10 @@ export const lang = {
       blogsubtitle: "Sous titre du blog",
       blogcontent: "Contenu du blog",
       myblogs: "Mes Blogs",
+      manageavocats: "Gestion des avocats",
+      gessite: "Gestion du site",
+      commenthis: "Historique des commentaires",
+      nocom: "Pas de commentaires",
     },
   },
 };

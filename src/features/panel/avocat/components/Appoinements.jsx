@@ -2,10 +2,6 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { fakeAppoinement } from '../../../../constants/fake_data'
 
-
-
-
-
 const Appoinements = () => {
 
     const AppoinementCard = ({ appoinement, index }) => {

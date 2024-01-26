@@ -12,7 +12,9 @@ export const fakeAvocat = {
   phonenumber: 544255544,
   website: "https://sualgoodman.com/",
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+  status: "Active",
   position: [51.505, -0.09],
+  id: 1,
 };
 
 export const fakeRates = [
@@ -39,4 +41,12 @@ export const fakeAppoinement = {
   fromTime: "12:15",
   toTime: "15:00",
   date: "31 dec 1999",
+};
+
+export const fakeComment = {
+  name: "Walter White",
+  rate: 5,
+  comment:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+  isAccepted: false,
 };
