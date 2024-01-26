@@ -8,11 +8,8 @@ export default {
         primary: "#C89D66",
         secondary: "#333642",
         navbar: "#162542",
-<<<<<<< HEAD
-        grey: "#9D9D9D",
-=======
         secondaryBlur: "#16254299",
->>>>>>> 919214501f61094e55eb30ca5e95310d37831d1a
+        grey: "#9D9D9D",
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/landing/landing-hero.png')",

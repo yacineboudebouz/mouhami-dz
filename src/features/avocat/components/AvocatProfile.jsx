@@ -10,11 +10,12 @@ import LanguageIcon from '@mui/icons-material/Language';
 import { primaryColor } from '../../../utils/colors'
 import { semilogo } from '../../../assets'
 
-// import GoogleMapReact from 'google-map-react'
 import { MapContainer, TileLayer, useMap, Marker, Popup, } from 'react-leaflet'
+import { useParams } from 'react-router-dom'
 function AvocatProfile() {
     const { t, i18n } = useTranslation();
-    const position = [51.505, -0.09]
+    const id = useParams().id
+
     return (
         <div className=' flex md:flex-row md:justify-between   p-5 justify-center flex-col items-center md:items-start'>
             <div className=' flex flex-col md:w-[400px] w-full md:flex-wrap items-center md:items-start '>

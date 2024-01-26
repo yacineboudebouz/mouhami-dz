@@ -32,3 +32,11 @@ export const fakeRates = [
     rate: 3,
   },
 ];
+export const fakeAppoinement = {
+  name: "Eminem",
+  email: "marshallmathers@eminem.us",
+  number: "+1458653785",
+  fromTime: "12:15",
+  toTime: "15:00",
+  date: "31 dec 1999",
+};

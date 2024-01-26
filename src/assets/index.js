@@ -11,7 +11,9 @@ import blog from "./landing/blog.png";
 import telegram from "./landing/telegram.png";
 import facebook from "./landing/facebook.png";
 import linkedin from "./landing/linkedin.png";
-
+import success from "./signUp/success.png";
+import dashboard from "./panel/dashboard.svg";
+import settings from "./panel/settings.svg";
 export {
   logo,
   meet,
@@ -26,4 +28,7 @@ export {
   facebook,
   telegram,
   linkedin,
+  success,
+  dashboard,
+  settings,
 };

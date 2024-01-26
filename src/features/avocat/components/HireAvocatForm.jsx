@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
+import { success } from '../../../assets';
 
 const HireAvocatForm = () => {
     const { t, i18n } = useTranslation();
@@ -212,10 +213,21 @@ const HireAvocatForm = () => {
                                 </li>
                             </ul>
                         </motion.div>}
+                        {step === 3 && <motion.div animate={{ opacity: 1 }} transition={1} initial={{ opacity: 0 }} className=' flex flex-col items-center justify-evenly h-full'>
+                            <img src={success} className=' w-[100px] h-[100px]' />
+                            <div>
+                                <p className=' font-semibold'>{t("confirmed")}</p>
+                                <p className=' text-grey font-light'>{t("team")}</p>
+                            </div>
+                            <div className=' bg-gray-300 p-3 rounded-md'>
+                                RDV N° 554612845
+                            </div>
+                            <button onClick={() => { handleClose() }} className=' bg-primary text-white p-3 flex justify-center w-[100px] rounded-md  hover:bg-orange-200 duration-300 '>{t("close")}</button>
+                        </motion.div>}
                         {loading && <div className=' fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center '>
                             <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
                         </div>}
-                        <div className={`${step === 0 ? "flex flex-row justify-end relative bottom-0 p-5 " : "flex flex-row justify-between w-full   relative bottom-0 p-5 "}`}>
+                        {step !== 3 && <div className={`${step === 0 ? "flex flex-row justify-end relative bottom-0 p-5 " : "flex flex-row justify-between w-full   relative bottom-0 p-5 "}`}>
                             {step !== 0 && <button onClick={() => {
                                 if (!loading) {
                                     setStep(step - 1)
@@ -235,7 +247,7 @@ const HireAvocatForm = () => {
                                 }
                             } className=' bg-primary text-white p-3 flex justify-center w-[100px] rounded-md  hover:bg-orange-200 duration-300 '>{step == 2 ? t("confirm") : t("next")}</button>
                         </div>
-                    </div>
+                        }</div>
                 </motion.div>
 
             }

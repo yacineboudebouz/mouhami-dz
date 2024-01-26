@@ -13,6 +13,7 @@ import SignUpAvocat from './features/Authentification/SignUpAvocat';
 import SignUpAdmin from './features/Authentification/SignUpAdmin';
 import LoginAdmin from './features/Authentification/LoginAdmin';
 import LoginAvocat from './features/Authentification/LoginAvocat';
+import AvocatPanel from './features/panel/avocat/AvocatPanel';
 
 
 
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/sign-up-admin' element={<SignUpAdmin></SignUpAdmin>} />
         <Route path='/login-admin' element={<LoginAdmin></LoginAdmin>} />
         <Route path='/login-avocat' element={<LoginAvocat></LoginAvocat>} />
+        <Route path='/avocat-panel' element={<AvocatPanel />} />
         <Route path='*' element={<h1>404</h1>} />
 
       </Routes>
