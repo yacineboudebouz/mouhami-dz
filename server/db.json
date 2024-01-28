@@ -13,72 +13,12 @@
       "phonenumber": 544255544,
       "website": "https://sualgoodman.com/",
       "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "status": "Active",
+      "status": "Inactive",
       "position": [
         51.505,
         -0.09
       ],
       "id": "1"
-    },
-    {
-      "name": "Walter",
-      "surname": "White",
-      "email": "walterwhite@gmail.com",
-      "password": 12345,
-      "rating": 4,
-      "speciality": "Droit chimique",
-      "img": "https://media.istockphoto.com/id/1442772282/photo/front-view-portrait-of-a-modern-man-standing-with-arms-crossed-looking-at-the-camera.webp?b=1&s=170667a&w=0&k=20&c=RInXnijmGmDuV1v-SrAJ6FsQNuOnPXodkz_0LzAd8ig=",
-      "wilaya": "New Mexico",
-      "rates": 9,
-      "phonenumber": 555123789,
-      "website": "https://walterwhite.com/",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "status": "Active",
-      "position": [
-        35.084,
-        -106.624
-      ],
-      "id": "2"
-    },
-    {
-      "name": "Kim",
-      "surname": "Wexler",
-      "email": "kimwexler@gmail.com",
-      "password": 12345,
-      "rating": 4,
-      "speciality": "Droit civil",
-      "img": "https://media.istockphoto.com/id/1435745704/photo/portrait-of-smiling-mid-adult-businessman-standing-at-corporate-office.webp?b=1&s=170667a&w=0&k=20&c=JGtTfOROhAa32AWDQSZwHK0Un0zX5r4QeDf6nb7_6Nc=",
-      "wilaya": "New Mexico",
-      "rates": 8,
-      "phonenumber": 555456789,
-      "website": "https://kimwexler.com/",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "status": "Active",
-      "position": [
-        35.085,
-        -106.61
-      ],
-      "id": "3"
-    },
-    {
-      "name": "Howard",
-      "surname": "Hamlin",
-      "email": "howardhamlin@gmail.com",
-      "password": 12345,
-      "rating": 3,
-      "speciality": "Droit commercial",
-      "img": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFufGVufDB8fDB8fHww",
-      "wilaya": "New Mexico",
-      "rates": 7,
-      "phonenumber": 555987654,
-      "website": "https://howardhamlin.com/",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "status": "Inactive",
-      "position": [
-        35.087,
-        -106.61
-      ],
-      "id": "4"
     },
     {
       "name": "Mike",
@@ -93,15 +33,15 @@
       "phonenumber": 555789456,
       "website": "https://mikeehrmantraut.com/",
       "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "status": "Active",
+      "status": "Inactive",
       "position": [
         35.09,
         -106.61
       ],
-      "id": 5
+      "id": "5"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "MouhamiNom",
       "surname": "mouhami prenom",
       "email": "mouhami@gmail.com",

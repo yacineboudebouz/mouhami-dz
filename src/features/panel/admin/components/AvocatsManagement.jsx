@@ -3,12 +3,42 @@ import { useTranslation } from 'react-i18next'
 import { fakeAvocat } from '../../../../constants/fake_data';
 import { motion } from 'framer-motion'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import axios from 'axios';
 const AvocatsManagement = () => {
     const { t, i18n } = useTranslation();
     const [selectedAvocate, setSelectedAvocate] = useState(null)
     const [popupOpen, setPopupOpen] = useState(false)
-    const handledelete = () => { }
+    const [avocats, setAvocats] = useState([])
+    const handledelete = async (id) => {
+        await axios.delete(`http://localhost:3000/avocats/${id}`)
+        setAvocats(avocats.filter(avocat => avocat.id !== id))
+    }
+    const fetchAvocats = async () => {
+
+        const res = await axios.get("http://localhost:3000/avocats")
+        console.log(res.data)
+        if (res.status === 200) {
+            setAvocats(res.data)
+        }
+        else {
+            console.log("error")
+        }
+
+    }
+    const handleActivate = async () => {
+        setSelectedAvocate({ ...selectedAvocate, status: "Active" })
+    }
+    const handleDeactivate = async () => {
+        setSelectedAvocate({ ...selectedAvocate, status: "Inactive" })
+    }
+    const handleConfirm = async () => {
+        await axios.put(`http://localhost:3000/avocats/${selectedAvocate.id}`, {
+            ...selectedAvocate
+        })
+        setAvocats(avocats.map(avocat => avocat.id === selectedAvocate.id ? selectedAvocate : avocat))
+    }
     useEffect(() => {
+
         if (popupOpen) {
             document.body.classList.add('overflow-hidden');
         } else {
@@ -20,7 +50,11 @@ const AvocatsManagement = () => {
             document.body.classList.remove('overflow-hidden');
         };
     }, [popupOpen]);
-    const avocats = [fakeAvocat, fakeAvocat]
+
+    useEffect(() => {
+        fetchAvocats()
+    }, [])
+
     return (
         <div className=' flex flex-col w-full p-5'>
             <h1 className=' font-semibold text-[25px]'>{t("manageavocats")}</h1>
@@ -38,7 +72,7 @@ const AvocatsManagement = () => {
                         <p>{avocat.speciality}</p>
                         <p>{avocat.status}</p>
                     </div>
-                    <button onClick={() => handledelete()} ><DeleteOutlineOutlinedIcon sx={{ color: "red" }} /></button>
+                    <button onClick={() => handledelete(avocat.id)} ><DeleteOutlineOutlinedIcon sx={{ color: "red" }} /></button>
                 </div>))}
 
             </div>
@@ -84,16 +118,21 @@ const AvocatsManagement = () => {
                                             <p className=' font-semibold text-primary'>{t("Wilaya")}</p>
                                             <p>{selectedAvocate.wilaya}</p>
                                         </li>
-                                        <li className=' flex flex-row gap-2'>
+                                        <li className=' flex flex-row gap-2 items-center'>
                                             <p className=' font-semibold text-primary'>{"Status"}</p>
                                             <p>{selectedAvocate.status}</p>
+                                            {selectedAvocate.status === "Inactive" && <button onClick={() => handleActivate()} className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("Activate")}</button>}
+                                            {selectedAvocate.status === "Active" && <button onClick={() => handleDeactivate()} className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("Deactivate")}</button>}
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div className=' flex flex-row justify-between'>
                                 <button onClick={() => setPopupOpen(false)} className=' bg-grey text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-gray-700'>{t("cancel")}</button>
-                                <button className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("confirm")}</button>
+                                <button onClick={() => {
+                                    handleConfirm()
+                                    setPopupOpen(false)
+                                }} className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("confirm")}</button>
 
                             </div>
                         </div>
