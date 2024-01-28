@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { hammer, algeria, blog } from '../../../assets'
 import { animate, motion } from 'framer-motion'
 import { textVariant, fadeIn, slideIn, littleFadeIn } from '../../../utils/motion'
 import { SectionWrapper } from '../../../hoc'
 import { Tilt } from 'react-tilt'
-
+import axios from 'axios'
 import { fakeAvocat, fakeRates } from '../../../constants/fake_data'
 import { FaStar, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom/dist'
 import { changeRate, rateIdx } from '../landingSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import blogData from "../../../constants/blogData"
@@ -25,7 +25,7 @@ const Avocats = () => {
     const list = fakeRates
     const dispatch = useDispatch()
     const idx = useSelector(rateIdx)
-
+    const [isLoading, setIsLoading] = useState(false)
 
 
     const handleNext = () => {
@@ -44,42 +44,50 @@ const Avocats = () => {
             dispatch(changeRate(idx - 1))
         }
     }
-    let avocats = [fakeAvocat, fakeAvocat, fakeAvocat]
-    // const StarRating = ({ rating }) => {
-    //     return (
-    //         <div className=' flex flex-row'>
-    //             {[...Array(5)].map((star, i) => {
-    //                 const ratingValue = i + 1;
-    //                 return (
-    //                     <label key={i} >
-    //                         <FaStar color={ratingValue <= rating ? "#C89D66" : "#333642"} />
-    //                     </label>
-    //                 );
-    //             })}
-    //         </div>
-    //     );
-    // };
+    const [avocats, setAvocats] = useState([])
+    const fetchAvocats = async () => {
+        setIsLoading(true)
+        await new Promise(r => setTimeout(r, 1000))
+        const res = await axios.get("http://localhost:3000/avocats")
+        if (res.status === 200) {
+            setAvocats(res.data.slice(0, 3))
+        }
+        else {
+            console.log("error")
+        }
+        setIsLoading(false)
+    }
+
+
+
+    useEffect(() => {
+        fetchAvocats()
+    }
+        , [])
+
 
     const AvocatCard = ({ fakeAvocat, index }) => {
 
         return (
-            <Tilt options={{ max: 25, scale: 1.05, perspective: 1000, speed: 300, transition: true }}>
+            <Link to={`/avocat/${fakeAvocat.id}`}>
+                <Tilt options={{ max: 25, scale: 1.05, perspective: 1000, speed: 300, transition: true }}>
 
-                <div className=' flex flex-col justify-center items-center gap-5 w-[250px] h-[250px]  border-primary border  bg-secondary shadow-lg p-5'>
-                    <div className='w-20 h-20 rounded-full flex justify-center items-center'>
-                        <img src={fakeAvocat.img} className=' h-20 w-20 rounded-full' />
+                    <div className=' flex flex-col justify-center items-center gap-5 w-[250px] h-[250px]  border-primary border  bg-secondary shadow-lg p-5'>
+                        <div className='w-20 h-20 rounded-full flex justify-center items-center'>
+                            <img src={fakeAvocat.img} className=' h-20 w-20 rounded-full' />
+                        </div>
+                        <div className=' flex flex-row items-center justify-center gap-1 text-white'>
+                            <p>{fakeAvocat.surname}</p>
+                            <p>{fakeAvocat.name}</p>
+                            <p>{fakeAvocat.wilaya}</p>
+                        </div>
+                        <p className=' text-primary font-semibold'>{fakeAvocat.speciality}</p>
+                        <StarRating rating={fakeAvocat.rating} />
+
                     </div>
-                    <div className=' flex flex-row items-center justify-center gap-1 text-white'>
-                        <p>{fakeAvocat.surname}</p>
-                        <p>{fakeAvocat.name}</p>
-                        <p>{fakeAvocat.wilaya}</p>
-                    </div>
-                    <p className=' text-primary font-semibold'>{fakeAvocat.speciality}</p>
-                    <StarRating rating={fakeAvocat.rating} />
 
-                </div>
-
-            </Tilt>
+                </Tilt>
+            </Link>
         )
     }
     const ClientRateCard = ({ fakeRate }) => {
@@ -101,12 +109,22 @@ const Avocats = () => {
                 {<div className=' flex flex-row gap-5 items-center justify-center top flex-wrap'>
                     {avocats.map((avocat, i) => {
                         return (
-                            <motion.div variants={fadeIn('left', {}, i * 0.25)} className=' flex' >
+                            <div className=' flex' >
                                 <AvocatCard fakeAvocat={avocat} index={i} key={i} />
-                            </motion.div>
+                            </div>
                         )
                     })}
                 </div>}
+                {isLoading && <div className=' flex flex-row gap-5 items-center justify-center top flex-wrap'>
+                    <Audio
+                        height="80"
+                        width="80"
+                        radius="9"
+                        color="#C89D66"
+                        ariaLabel="loading"
+                        wrapperStyle
+                        wrapperClass
+                    />  </div>}
                 {/* { <Audio
                     height="80"
                     width="80"
