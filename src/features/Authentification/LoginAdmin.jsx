@@ -5,35 +5,49 @@ import { motion } from 'framer-motion'
 import { littleFadeIn, littleFadeInX, slideIn, textVariant } from "../../utils/motion"
 import GoogleIcon from '@mui/icons-material/Google';
 import logo from "../../assets/signUp/logoName.png"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const LoginAdmin = () => {
   const [email , setEmail] = useState("")
   const [motDePasse , setMotDePasse] = useState("")
+  const navigate = useNavigate()
 
 
-
-  const handleSubmit = ()=>{
-    const formData = new FormData();
-    formData.append('Non', email);
-    formData.append('Non', motDePasse);
-    axios.post('' , formData)
-    .then(res =>{
-        if(res.data.staus === "Success"){
-            console.log("succeded")
+  const handleLogin = (e)=>{
+    e.preventDefault()
+    axios.get('http://localhost:3000/admin', {
+      params: {
+        email: email
+      }
+    })
+    .then(response => {
+      const admins = response.data;
+      if (admins.length > 0) {
+        const admin = admins[0]; // Assuming there's only one admin per email
+        if(admin.password === motDePasse){
+              console.log("login approved")
+              console.log(sessionStorage)
+              sessionStorage.setItem("AdmiName" , admin.name)
+              console.log(sessionStorage)
+              navigate("/admin-panel/"+ admin.name)
         }
         else{
-            console.log("failed")
+          alert("Incorrect password")
         }
+      } else {
+        alert("this user doesn't exist")
+      }
     })
-    .catch(err => console.log(err))
-  }
+    .catch(error => {
+      console.error('Error fetching admin by email:', error);
+    });
+};
  
   return (
     <div className='flex flex-row justify-between'>
        <div className='flex flex-col items-center text-secondary p-8 gap-8 bg-logo-pattern bg-no-repeat bg-left-bottom'>
           <p className='font-bold text-2xl'>Se connecter</p>
-          <form onSubmit={handleSubmit} className='flex flex-col items-center'>
+          <form onSubmit={handleLogin} className='flex flex-col items-center'>
                     <span className='flex items-center rounded-full text-secondary shadow p-4 cursor-pointer hover:grayscale'><GoogleIcon className='h-7 w-7'></GoogleIcon></span>
                     <div class="flex flex-col gap-6 mb-6 items-center py-8 w-[40em]">
                          <div class="mb-6 w-[32em]">
@@ -54,7 +68,7 @@ const LoginAdmin = () => {
         <div className='flex flex-col items-center justify-center gap-6 mt-32'>
             <p className='text-[3em] font-medium text-white'>Bonjour !</p>
             <p className='text-sm text-white '>Inscrivez-vous pour créer un nouveau compte</p>
-            <NavLink to='/sign-up-avocat'>
+            <NavLink to='/sign-up-admin'>
                 <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>S'inscrire</motion.button>
             </NavLink>
             </div>

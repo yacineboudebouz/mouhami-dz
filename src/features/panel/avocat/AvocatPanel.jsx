@@ -50,7 +50,7 @@ const AvocatPanel = () => {
                     <NotificationsNoneOutlinedIcon sx={{ color: "gray" }} />
                     <button className='  text-grey rounded-md px-4 py-2 ml-4 hover:text-primary duration-300' onClick={handleLogout}>{t("logout")}</button>
                 </div>
-                <p className='text-secondary text-2xl font-semibold p-4'>Bonjour , {avocatFName}</p>
+                <p className='text-secondary text-2xl font-semibold p-4'>Bonjour maitre , {avocatFName}</p>
                 {active == 0 && <Appoinements />}
                 {active == 1 && <BlogsPanel />}
             </div>

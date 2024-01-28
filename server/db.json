@@ -121,7 +121,7 @@
         -0.09
       ]
     }
-  ] ,
+  ],
   "blogs": [
     {
       "id": "fb53",
@@ -182,6 +182,15 @@
       "name": "qsdf",
       "email": "qsdf@fqsd.sqdf",
       "phone": "055464"
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "name": "admin name",
+      "surname": "admin prenom",
+      "email": "admin@gmail.com",
+      "password": "12345"
     }
   ]
 }

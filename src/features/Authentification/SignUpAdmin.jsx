@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import logo from "../../assets/signUp/logoName.png"
 import success from  "../../assets/signUp/success.png"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const SignUpAdmin = () => {
   const steps = ['', ''];
@@ -70,18 +70,24 @@ const SignUpAdmin = () => {
   };
 
   
-  const handleSubmit = ()=>{
-    const formData = new FormData();
-    formData.append('Non', nom);
-    formData.append('Non', prenom);
-    formData.append('Non', email);
-    formData.append('Non', motDePasse);
-    axios.post('' , formData)
+  const navigate = useNavigate()
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const data = {
+      "name": nom,
+      "surname": prenom,
+      "email": email,
+      "password" : motDePasse ,
+      "id": 1
+    }
+    axios.post('http://localhost:3000/admin' , data)
     .then(res =>{
-        if(res.data.staus === "Success"){
+        if(res.statusText === "Created"){
             console.log("succeded")
+            navigate("/")
         }
         else{
+            console.log(res.statusText)
             console.log("failed")
         }
     })

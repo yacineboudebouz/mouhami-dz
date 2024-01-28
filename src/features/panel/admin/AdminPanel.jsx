@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { logo } from '../../../assets'
 import GroupIcon from '@mui/icons-material/Group';
@@ -8,9 +8,23 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import AvocatsManagement from './components/AvocatsManagement';
 import CommentsPanel from './components/CommentsPanel';
+import { useNavigate } from 'react-router-dom';
 const AdminPanel = () => {
     const [active, setActive] = useState(0)
-    const handleLogout = () => { }
+    const [adminFName , setAdminFName] = useState("")
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        const AdminName = sessionStorage.getItem("AdmiName")
+        setAdminFName(AdminName)
+        console.log(sessionStorage)
+        console.log(AdminName)
+    },[])
+
+    const handleLogout = ()=>{
+        sessionStorage.clear()
+        navigate("/")
+    }
     const { t, i18n } = useTranslation();
     return (
         <section className=' flex flex-row w-screen h-full'>
@@ -36,6 +50,7 @@ const AdminPanel = () => {
 
                     <button className='  text-grey rounded-md px-4 py-2 ml-4 hover:text-primary duration-300' onClick={handleLogout}>{t("logout")}</button>
                 </div>
+                <p className='text-secondary text-2xl font-semibold p-4'>Bonjour , Mr {adminFName}</p>
                 {active == 0 && <AvocatsManagement />}
                 {active == 1 && <CommentsPanel />}
 
