@@ -22,7 +22,7 @@ function RateFrom() {
         setComment(e.target.value)
     }
     return (
-        <div className=' flex flex-col p-5 '>
+        <form className=' flex flex-col p-5 '>
             <p className=' text-[30px] font-medium'>{t("sharerating")}</p>
             <div className=' flex flex-col rounded-xl shadow-lg p-10 gap-10 md:w-[90vh]'>
                 <div>
@@ -51,7 +51,7 @@ function RateFrom() {
                 </div>
                 <button type='submit' className=' bg-primary text-white py-2 rounded-sm w-[20vh]  duration-500 hover:bg-orange-700'>{t("send")}</button>
             </div>
-        </div>
+        </form>
     )
 }
 

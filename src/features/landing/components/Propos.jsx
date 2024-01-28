@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { littleFadeIn, littleFadeInX, slideIn, textVariant } from '../../../utils/motion'
 import { SectionWrapper } from '../../../hoc'
 import contentLits from '../../../constants/landing'
+import { NavLink } from 'react-router-dom';
 
 const Propos = () => {
 
@@ -47,8 +48,10 @@ const Propos = () => {
             <div className=' flex md:flex-row flex-col justify-center w-full px-24 gap-2'>
                 <motion.input variants={littleFadeInX()} onChange={handleProblemChange} type='text' placeholder='Problème juridique' className=' outline-2 p-3 shadow-lg outline-primary' value={problem} />
                 <motion.input variants={textVariant()} onChange={handleLocationChange} type='text' placeholder='Wilaya, code postal  . . .' className=' outline-2 p-3 shadow-lg outline-primary' value={location} />
-                <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Trouver Un Avocat</motion.button>
-            </div>
+                <NavLink to='/find-avocat'>
+                    <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300'>Trouver Un Avocat</motion.button>
+                </NavLink>
+                </div>
             <div className=" sm:flex-row flex flex-col justify-between items-center my-10" >
                 <div className=" text-start mx-4 w-2/4 flex flex-col justify-between h-full">
                     <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">A propos de nous</motion.p>

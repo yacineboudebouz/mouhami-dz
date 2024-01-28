@@ -28,7 +28,7 @@ const Blog = () => {
             {isLoading && <div className=' min-h-screen'></div>}
             {blogData != null &&
                 <div className='flex flex-col items-center  text-zinc-950 py-6 gap-6'>
-                    <div className='flex flex-col items-start gap-5'>
+                    <div className='flex flex-col items-center gap-5'>
                         <p className='text-2xl md:text-3xl'>{blogData.blogTitle}</p>
                         <p className='text-xl md:text-2xl'>{blogData.blogSubTitle}</p>
                         <img src={blogData.blogImg} alt='blog_img' className='w-[40vw] h-[350px]'></img>

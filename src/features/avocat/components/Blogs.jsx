@@ -32,7 +32,6 @@ function Blogs({ avocatId }) {
                                 <img src={blog.blogImg} className=' w-full h-[140px]' />
                                 <div className=' p-2'>
                                     <p className=' text-[12px] font-medium'>{blog.blogTitle}</p>
-                                    <p className=' text-[15px]'>{blog.blogSubTitle}</p>
                                 </div>
                             </div>
                         </Link>

@@ -183,11 +183,11 @@ const Avocats = () => {
                 </div>
                 <div className=" sm:flex-row flex flex-col justify-between items-center my-10" >
                     <motion.div variants={littleFadeIn()} className=' relative h-[300px] w-[300px]  bg-cover '>
-                        <img src={blog} className=' absolute w-full h-full cover-fill   border-firstBgColor border-4' />
+                        <img src={blog.blogImg} className=' absolute w-full h-full cover-fill   border-firstBgColor border-4' />
                     </motion.div>
                     <div className=" text-start mx-4 w-2/4 flex flex-col justify-between h-full">
                         <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">{blog.blogTitle}</motion.p>
-                        <motion.p variants={slideIn('left')} className="max-w-2xl my-8 text-[15px] md:text-[20px] w-full ">{blog.blogContent}</motion.p>
+                        <motion.p variants={slideIn('left')} className="max-w-2xl my-8 text-[15px] md:text-[20px] w-full ">{blog.blogContent.substring(0, 200)}</motion.p>
                         <NavLink to={`blog/${blog.id}`}>
                             <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300 max-w-xs'>Voir plus</motion.button>
                         </NavLink>

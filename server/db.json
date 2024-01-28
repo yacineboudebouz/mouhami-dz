@@ -120,14 +120,43 @@
         51.505,
         -0.09
       ]
+    },
+    {
+      "id": 6,
+      "name": "Rahma",
+      "surname": "Mihoub",
+      "email": "mihoubrahma@gmail.com",
+      "password": "12345",
+      "profileApproved": 0,
+      "rating": 0,
+      "speciality": "droit de travail",
+      "img": "",
+      "wilaya": "guelma",
+      "rates": 0,
+      "phonenumber": 698687893,
+      "website": "",
+      "bio": "",
+      "status": "Disactive",
+      "position": [
+        51.505,
+        -0.09
+      ]
     }
   ],
   "blogs": [
     {
       "id": "2543",
-      "blogTitle": "New Blog",
-      "blogSubTitle": "first blog for testing",
-      "blogContent": "This is the first article on  the website\n",
+      "blogTitle": "Guide Juridique :Responsabilité Civile",
+      "blogSubTitle": "Protégez Vos Droits et Votre Responsabilité avec Ces Principes Fondamentaux",
+      "blogContent": "Dans notre société moderne, la responsabilité civile est un concept crucial qui régit de nombreuses interactions légales et sociales. Comprendre les tenants et les aboutissants de la responsabilité civile est essentiel pour protéger vos droits et établir des relations juridiques solides. Dans ce guide, nous explorerons les principes fondamentaux de la responsabilité civile et leur application dans divers contextes.La responsabilité civile se réfère à l'obligation légale de réparer les dommages causés à autrui. Elle est souvent invoquée en cas de négligence, d'inconduite ou de violation des droits d'une autre personne. En droit civil, la responsabilité peut découler de diverses sources, notamment des contrats, des délits civils ou des obligations légales spécifiques.",
+      "blogImg": "https://media.istockphoto.com/id/178714734/photo/decorative-scales-of-justice.jpg?s=612x612&w=0&k=20&c=nw5b8Tg1lq582M4kJrqBDF4ceFg_1geL-iacq2C2vO8=",
+      "avocatId": "1"
+    },
+    {
+      "id": "3898",
+      "blogTitle": "blog title",
+      "blogSubTitle": "blog subtitle",
+      "blogContent": "blog content",
       "blogImg": "https://media.istockphoto.com/id/1414825517/photo/symbol-of-justice-golden-law-scales-on-blue-backgroun.webp?b=1&s=170667a&w=0&k=20&c=S7qRmuSkZh4cyiBcmJgdr2uZAEky2GuDZRlUGbLSPjU=",
       "avocatId": "1"
     }
@@ -153,6 +182,28 @@
       "name": "",
       "email": "",
       "phone": "",
+      "status": "accepted"
+    },
+    {
+      "id": "7113",
+      "avocatId": "1",
+      "date": "Tue Jan 30 2024",
+      "from": "01:00",
+      "to": "02:00",
+      "name": "Rahma Mihoub",
+      "email": "mihoubrahma@gmail.com",
+      "phone": "0555555555",
+      "status": "accepted"
+    },
+    {
+      "id": "2776",
+      "avocatId": "1",
+      "date": "Tue Jan 30 2024",
+      "from": "01:00",
+      "to": "02:00",
+      "name": "rahma",
+      "email": "mihoubrahma@gmail.com",
+      "phone": "0562194490",
       "status": "accepted"
     }
   ],
