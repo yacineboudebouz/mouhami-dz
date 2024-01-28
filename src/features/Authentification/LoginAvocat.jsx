@@ -5,35 +5,55 @@ import { motion } from 'framer-motion'
 import { littleFadeIn, littleFadeInX, slideIn, textVariant } from "../../utils/motion"
 import GoogleIcon from '@mui/icons-material/Google';
 import logo from "../../assets/signUp/logoName.png"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const LoginAvocat = () => {
   const [email , setEmail] = useState("")
   const [motDePasse , setMotDePasse] = useState("")
+  const navigate = useNavigate()
 
 
-
-  const handleSubmit = ()=>{
-    const formData = new FormData();
-    formData.append('Non', email);
-    formData.append('Non', motDePasse);
-    axios.post('' , formData)
-    .then(res =>{
-        if(res.data.staus === "Success"){
-            console.log("succeded")
+  const handleLogin = (e)=>{
+      e.preventDefault()
+      axios.get('http://localhost:3000/avocats', {
+        params: {
+          email: email
         }
-        else{
-            console.log("failed")
+      })
+      .then(response => {
+        const avocats = response.data;
+        if (avocats.length > 0) {
+          const avocat = avocats[0]; // Assuming there's only one avocat per email
+          if(avocat.password === motDePasse){
+              if(avocat.status === "Active"){
+                console.log("login approved")
+                console.log(sessionStorage)
+                sessionStorage.setItem("name" , avocat.name)
+                console.log(sessionStorage)
+                navigate("/avocat-panel/"+ avocat.name)
+              }
+              else{
+                alert("your registration has not been approved yet")
+              }
+          }
+          else{
+            alert("Incorrect password")
+          }
+        } else {
+          alert("this user doesn't exist")
         }
-    })
-    .catch(err => console.log(err))
-  }
- 
+      })
+      .catch(error => {
+        console.error('Error fetching avocat by email:', error);
+      });
+  };
+
+
   return (
     <div className='flex flex-row justify-between'>
        <div className='flex flex-col items-center text-secondary p-8 gap-8 bg-logo-pattern bg-no-repeat bg-left-bottom'>
           <p className='font-bold text-2xl'>Se connecter</p>
-          <form onSubmit={handleSubmit} className='flex flex-col items-center'>
+          <form onSubmit={handleLogin} className='flex flex-col items-center'>
                     <span className='flex items-center rounded-full text-secondary shadow p-4 cursor-pointer hover:grayscale'><GoogleIcon className='h-7 w-7'></GoogleIcon></span>
                     <div class="flex flex-col gap-6 mb-6 items-center py-8 w-[40em]">
                          <div class="mb-6 w-[32em]">

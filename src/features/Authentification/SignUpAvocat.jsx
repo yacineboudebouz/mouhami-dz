@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { littleFadeIn, littleFadeInX, slideIn, textVariant } from "../../utils/motion"
 import Box from '@mui/material/Box';
@@ -82,23 +82,35 @@ const SignUpAvocat = () => {
 
     setFile(selectedFile);
   };
-
-  const handleSubmit = ()=>{
-    const formData = new FormData();
-    formData.append('Non', nom);
-    formData.append('Non', prenom);
-    formData.append('Non', email);
-    formData.append('Non', motDePasse);
-    formData.append('non', address);
-    formData.append('non', specialite);
-    formData.append('CV', file);
-
-    axios.post('' , formData)
+  const navigate = useNavigate()
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const data = {
+      "name": nom,
+      "surname": prenom,
+      "email": email,
+      "password" : motDePasse ,
+      "profileApproved": 0 ,
+      "rating": 0,
+      "speciality": specialite,
+      "img":"",
+      "wilaya": address,
+      "rates": 0,
+      "phonenumber": 698687893,
+      "website": "",
+      "bio": "",
+      "status": "Disactive",
+      "position": [51.505, -0.09],
+      "id": 6
+    }
+    axios.post('http://localhost:3000/avocats' , data)
     .then(res =>{
-        if(res.data.staus === "Success"){
+        if(res.statusText === "Created"){
             console.log("succeded")
+            navigate("/")
         }
         else{
+            console.log(res.statusText)
             console.log("failed")
         }
     })
