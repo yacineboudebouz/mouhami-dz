@@ -9,7 +9,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 const LoginAvocat = () => {
   const [email , setEmail] = useState("")
-  const [motDePasse , setMotDePasse] = useState("")
+  const [motDePasse , setMotDePasse] = useState()
   const navigate = useNavigate()
 
 
@@ -24,7 +24,9 @@ const LoginAvocat = () => {
         const avocats = response.data;
         if (avocats.length > 0) {
           const avocat = avocats[0]; // Assuming there's only one avocat per email
-          if(avocat.password === motDePasse){
+          console.log(avocat.password)
+          console.log(motDePasse)
+          if(avocat.password == motDePasse){
               if(avocat.status === "Active"){
                 console.log("login approved")
                 console.log(sessionStorage)
