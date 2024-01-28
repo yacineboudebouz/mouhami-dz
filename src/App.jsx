@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from './features/landing/Landing'
 import Avocat from './features/avocat/avocat';
 import './app/localization/i18n'
-import Faq from './features/faq/faq';
+import Faq from './features/faq/Faq';
 import Blog from './features/blog/Blog';
 import FindAvocat from './features/filter/FindAvocat';
 import CompareAvocats from './features/comparing/CompareAvocats';
