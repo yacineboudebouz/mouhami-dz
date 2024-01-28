@@ -155,5 +155,14 @@
       "phone": "",
       "status": "accepted"
     }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "name": "admin name",
+      "surname": "admin prenom",
+      "email": "admin@gmail.com",
+      "password": "12345"
+    }
   ]
 }
