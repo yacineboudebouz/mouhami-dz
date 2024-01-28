@@ -26,6 +26,7 @@
     "i18next": "^23.7.12",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.4.2",
+    "json-server": "^1.0.0-alpha.23",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-datepicker": "^5.0.0",
