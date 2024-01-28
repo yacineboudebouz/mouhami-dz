@@ -31,12 +31,13 @@ const HireAvocatForm = ({ avocat }) => {
         await new Promise(r => setTimeout(r, 1000))
         const result = await axios.post("http://localhost:3000/rdv", {
             avocatId: avocat.id,
-            date: selectedDate,
+            date: selectedDate.toDateString(),
             from: selectedFromTime,
             to: selectedToTime,
             name: name,
             email: email,
-            phone: phone
+            phone: phone,
+            status: "pending"
         })
         setLoading(false)
         if (result.status == 201) {

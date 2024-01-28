@@ -4,7 +4,7 @@
       "name": "Goodman",
       "surname": "Saul",
       "email": "saulgoodman@gmail.com",
-      "password": 12345,
+      "password": "test12345",
       "rating": 5,
       "speciality": "Droit des affaires",
       "img": "https://media.istockphoto.com/id/1385722788/photo/senior-man-smiling-at-the-camera-in-the-kitchen.jpg?s=1024x1024&w=is&k=20&c=2bSONtG-88-SSZ9o8n2WsZMplmfSEFOsfkSevahyYoA=",
@@ -121,67 +121,39 @@
         -0.09
       ]
     }
-  ] ,
+  ],
   "blogs": [
     {
-      "id": "fb53",
-      "blogTitle": "Test",
-      "blogSubTitle": "Test",
-      "blogContent": "Lorem lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      "blogImg": "https://media.istockphoto.com/id/1456542309/photo/the-scales-and-the-judges-hammer-on-the-table.webp?b=1&s=170667a&w=0&k=20&c=LxymLjyS1aHRtYoxFmcR7VvucKlIKZEOz8D-bP6jvkA=",
+      "id": "2543",
+      "blogTitle": "New Blog",
+      "blogSubTitle": "first blog for testing",
+      "blogContent": "This is the first article on  the website\n",
+      "blogImg": "https://media.istockphoto.com/id/1414825517/photo/symbol-of-justice-golden-law-scales-on-blue-backgroun.webp?b=1&s=170667a&w=0&k=20&c=S7qRmuSkZh4cyiBcmJgdr2uZAEky2GuDZRlUGbLSPjU=",
       "avocatId": "1"
     }
   ],
   "rdv": [
     {
-      "id": "1e24",
+      "id": "659c",
       "avocatId": "1",
-      "date": "2024-01-28T17:09:44.557Z",
-      "from": "12:00",
-      "to": "16:00",
-      "name": "yacine",
-      "email": "yacine@gamil.com",
-      "phone": "0542967094"
-    },
-    {
-      "id": "223a",
-      "avocatId": 4,
-      "date": "12 jan 2024",
-      "from": "12:00",
-      "to": "16:00",
+      "date": "2024-01-28T18:31:44.818Z",
+      "from": "01:00",
+      "to": "02:00",
       "name": "Yacine",
       "email": "yacine@gmail.com",
-      "phone": "054682"
+      "phone": "05467821",
+      "status": "accepted"
     },
     {
-      "id": "0360",
+      "id": "abe1",
       "avocatId": "1",
-      "date": "2024-01-28T17:09:44.557Z",
+      "date": "Sun Jan 28 2024",
       "from": "12:00",
-      "to": "16:00",
-      "name": "yacine",
-      "email": "yacine@gamil.com",
-      "phone": "0542967094"
-    },
-    {
-      "id": "4e09",
-      "avocatId": "1",
-      "date": "2024-01-28T17:12:42.738Z",
-      "from": "12:00",
-      "to": "12:00",
+      "to": "01:00",
       "name": "",
       "email": "",
-      "phone": ""
-    },
-    {
-      "id": "815b",
-      "avocatId": "1",
-      "date": "2024-01-28T17:13:27.708Z",
-      "from": "12:00",
-      "to": "12:00",
-      "name": "qsdf",
-      "email": "qsdf@fqsd.sqdf",
-      "phone": "055464"
+      "phone": "",
+      "status": "accepted"
     }
   ]
 }
