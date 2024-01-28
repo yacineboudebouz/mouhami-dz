@@ -12,7 +12,6 @@ import { changeRate, rateIdx } from '../landingSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import blogData from "../../../constants/blogData"
 import { NavLink } from 'react-router-dom/dist'
-import useFetch from '../../../common/useFetch'
 import { Audio } from 'react-loader-spinner'
 import { StarRating } from '../../../common/widgets/StarRating'
 
@@ -25,6 +24,7 @@ const Avocats = () => {
     const list = fakeRates
     const dispatch = useDispatch()
     const idx = useSelector(rateIdx)
+    const [blog, setBlog] = useState(blogData[0])
     const [isLoading, setIsLoading] = useState(false)
 
 
@@ -57,11 +57,22 @@ const Avocats = () => {
         }
         setIsLoading(false)
     }
+    const fetchBlog = async () => {
+        const res = await axios.get("http://localhost:3000/blogs")
+        if (res.status === 200) {
+            setBlog(res.data[0])
+        }
+        else {
+            console.log("error")
+        }
+
+    }
 
 
 
     useEffect(() => {
         fetchAvocats()
+        fetchBlog()
     }
         , [])
 
@@ -175,9 +186,9 @@ const Avocats = () => {
                         <img src={blog} className=' absolute w-full h-full cover-fill   border-firstBgColor border-4' />
                     </motion.div>
                     <div className=" text-start mx-4 w-2/4 flex flex-col justify-between h-full">
-                        <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">{blogData[0].blogTitle}</motion.p>
-                        <motion.p variants={slideIn('left')} className="max-w-2xl my-8 text-[15px] md:text-[20px] w-full ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris ..</motion.p>
-                        <NavLink to={`blog/${blogData[0].blogID}`}>
+                        <motion.p variants={textVariant()} className="max-w-2xl md:my-8 my-2 font-bold text-[20px] md:text-[30px]">{blog.blogTitle}</motion.p>
+                        <motion.p variants={slideIn('left')} className="max-w-2xl my-8 text-[15px] md:text-[20px] w-full ">{blog.blogContent}</motion.p>
+                        <NavLink to={`blog/${blog.id}`}>
                             <motion.button variants={littleFadeIn()} className=' bg-primary flex items-center p-3 justify-center cursor-pointer text-white hover:bg-amber-800 transition duration-300 max-w-xs'>Voir plus</motion.button>
                         </NavLink>
 

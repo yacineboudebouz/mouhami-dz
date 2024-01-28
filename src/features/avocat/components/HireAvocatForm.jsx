@@ -10,8 +10,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import { success } from '../../../assets';
+import axios from 'axios';
 
-const HireAvocatForm = () => {
+const HireAvocatForm = ({ avocat }) => {
     const { t, i18n } = useTranslation();
     const [popupOpen, setPopupOpen] = useState(false)
     const [step, setStep] = useState(0)
@@ -22,13 +23,24 @@ const HireAvocatForm = () => {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [loading, setLoading] = useState(false)
-    const avocat = fakeAvocat
+    const [rdvN, setRdvN] = useState("554612845")
+
 
     const handleSubmit = async () => {
         setLoading(true)
-        const result = await fetch('https://cat-fact.herokuapp.com/facts/')
+        await new Promise(r => setTimeout(r, 1000))
+        const result = await axios.post("http://localhost:3000/rdv", {
+            avocatId: avocat.id,
+            date: selectedDate,
+            from: selectedFromTime,
+            to: selectedToTime,
+            name: name,
+            email: email,
+            phone: phone
+        })
         setLoading(false)
-        if (result.status == 200) {
+        if (result.status == 201) {
+            setRdvN(result.data.id)
             setStep(step + 1)
         } else {
             alert("something went wrong")
@@ -220,7 +232,7 @@ const HireAvocatForm = () => {
                                 <p className=' text-grey font-light'>{t("team")}</p>
                             </div>
                             <div className=' bg-gray-300 p-3 rounded-md'>
-                                RDV N° 554612845
+                                {rdvN}
                             </div>
                             <button onClick={() => { handleClose() }} className=' bg-primary text-white p-3 flex justify-center w-[100px] rounded-md  hover:bg-orange-200 duration-300 '>{t("close")}</button>
                         </motion.div>}
